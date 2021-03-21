@@ -1,0 +1,11 @@
+(import ../glob)
+
+(assert (glob/matches "" ""))
+(assert (glob/matches "?" "x"))
+(assert (glob/matches "???" "xyz"))
+(assert (not (glob/matches "" " ")))
+(assert (glob/matches "foobar" "foobar"))
+(assert (glob/matches "f*bar" "foobar"))
+(assert (not (glob/matches "f*bar" "fooba")))
+(assert (not (glob/matches "f*bar" "fooba")))
+(assert (glob/matches* "foobar" "foobar"))
